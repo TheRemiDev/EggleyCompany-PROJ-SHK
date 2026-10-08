@@ -6,7 +6,7 @@
 <title>Contact | Eggley Company</title>
 <meta name="description" content="Contactez Eggley Company : formulaire, e-mail, téléphone et adresse du siège à Saint-Ouen-l'Aumône. Du lundi au vendredi, de 8 h à 18 h.">
 <link rel="canonical" href="https://eggleycompany.net/contact">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#FBFAF7">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="Eggley Company">
@@ -20,7 +20,9 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preload" href="/assets/fonts/plus-jakarta-sans-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/css/tokens.css">
 <link rel="stylesheet" href="/assets/css/style.css">
 <script>document.documentElement.classList.add("js")</script>
 </head>
@@ -28,60 +30,40 @@
 <a class="skip-link" href="#contenu">Aller au contenu</a>
 <header class="site-header">
   <div class="container site-header__inner">
-    <a class="brand" href="/" aria-label="Eggley Company — accueil"><img class="brand__mark" src="/assets/img/eggley-mark.png" alt="" width="134" height="175"><span class="brand__text"><span class="brand__name">Eggley <span>Company</span></span><span class="brand__tag">Import · Export · Négoce</span></span></a>
-    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Ouvrir le menu"><svg class="icon icon--menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg><svg class="icon icon--close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    <a class="brand" href="/" aria-label="Eggley Company — accueil"><img class="brand__mark" src="/assets/img/eggley-mark.png" alt="" width="134" height="175"><span class="brand__text"><span class="brand__name">Eggley Company</span><span class="brand__tag">Négoce · Import · Export</span></span></a>
+    <button class="nav-toggle" type="button" aria-controls="site-nav" aria-expanded="false" aria-label="Ouvrir le menu"><svg class="icon icon--menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg><svg class="icon icon--close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg><span>Menu</span></button>
     <nav class="nav" id="site-nav" aria-label="Navigation principale">
-      <ul class="nav__list">
-        <li><a class="nav__link" href="/">Accueil</a></li><li><a class="nav__link" href="/apropos">À propos</a></li><li><a class="nav__link" href="/services">Offres & services</a></li><li><a class="nav__link" href="/bioperfect">Bioperfect</a></li>
-      </ul>
-      <a class="btn btn--primary nav__cta" href="/contact" aria-current="page">Nous contacter <svg class="icon icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      <ul class="nav__list"><li><a class="nav__link" href="/">Accueil</a></li><li><a class="nav__link" href="/apropos">La maison</a></li><li><a class="nav__link" href="/services">Nos gammes</a></li><li><a class="nav__link" href="/bioperfect">Bioperfect</a></li></ul>
+      <a class="btn btn--primary nav__cta" href="/contact" aria-current="page">Demander une offre <svg class="icon icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
     </nav>
   </div>
 </header>
 <main id="contenu" tabindex="-1">
-<section class="page-hero page-hero--plain">
+<section class="page-hero">
   <div class="container">
-    <div class="page-hero__content">
-      <nav class="breadcrumb" aria-label="Fil d'Ariane"><ol><li><a href="/">Accueil</a></li><li><span aria-current="page">Contact</span></li></ol></nav>
-      <h1>Contactez-nous</h1>
-      <p>Une question, une demande de prix ou un projet de partenariat ? Laissez-nous votre message, notre service commercial vous répond dans les meilleurs délais.</p>
+    <nav class="breadcrumb" aria-label="Fil d'Ariane"><ol><li><a href="/">Accueil</a></li><li><span aria-current="page">Contact</span></li></ol></nav>
+    <div class="page-hero__grid">
+      <h1>Parlons de <em>votre projet.</em></h1>
+      <p>Une question, une demande de prix ou un projet de partenariat ? Laissez-nous votre message : notre service commercial vous répond dans les meilleurs délais.</p>
     </div>
   </div>
 </section>
-<section class="section">
+<section class="section section--flush-top">
   <div class="container contact-layout">
-    <div class="form-card reveal">
-      <h2 style="font-size:clamp(1.4rem,1.2rem + 0.8vw,1.75rem)">Envoyez-nous un message</h2>
-      <p class="muted" style="margin-bottom:1.75rem">Les champs marqués d'un <span style="color:var(--danger)">*</span> sont obligatoires.</p>
+    <div class="reveal">
       <form id="contact-form" action="https://formsubmit.co/sce.commercial@eggleycompany.net" method="POST">
         <div class="form-status" role="alert" aria-live="assertive"></div>
         <input type="hidden" name="_subject" value="Site web — nouveau message">
         <input type="hidden" name="_next" value="https://eggleycompany.net/merci">
         <input type="hidden" name="_template" value="table">
         <div class="honeypot" aria-hidden="true"><label for="f-honey">Ne pas remplir</label><input type="text" id="f-honey" name="_honey" tabindex="-1" autocomplete="off"></div>
+        <p class="hint" style="margin-bottom:1.5rem">Les champs marqués d'un <span class="req">*</span> sont obligatoires.</p>
         <div class="form-grid">
-          <div class="field">
-            <label for="f-nom">Nom et prénom<span class="req" aria-hidden="true">*</span></label>
-            <input id="f-nom" name="nom" type="text" autocomplete="name" required aria-describedby="f-nom-err">
-            <div id="f-nom-err"><p class="field__error" aria-live="polite"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg><span class="field__error-text"></span></p></div>
-          </div>
-          <div class="field">
-            <label for="f-societe">Société</label>
-            <input id="f-societe" name="societe" type="text" autocomplete="organization">
-          </div>
-          <div class="field">
-            <label for="f-email">Adresse e-mail<span class="req" aria-hidden="true">*</span></label>
-            <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required aria-describedby="f-email-err">
-            <div id="f-email-err"><p class="field__error" aria-live="polite"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg><span class="field__error-text"></span></p></div>
-          </div>
-          <div class="field">
-            <label for="f-tel">Téléphone</label>
-            <input id="f-tel" name="telephone" type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9 +().-]{6,20}" aria-describedby="f-tel-hint f-tel-err">
-            <span class="hint" id="f-tel-hint">Facultatif — pour être rappelé.</span>
-            <div id="f-tel-err"><p class="field__error" aria-live="polite"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg><span class="field__error-text"></span></p></div>
-          </div>
-          <div class="field field--full">
-            <label for="f-motif">Objet de votre demande<span class="req" aria-hidden="true">*</span></label>
+          <div class="field"><label for="f-nom">Nom et prénom<span class="req" aria-hidden="true">*</span></label><input id="f-nom" name="nom" type="text" autocomplete="name" required aria-describedby="f-nom-err"><div id="f-nom-err"><p class="field__error" aria-live="polite"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg><span class="field__error-text"></span></p></div></div>
+          <div class="field"><label for="f-societe">Société</label><input id="f-societe" name="societe" type="text" autocomplete="organization"></div>
+          <div class="field"><label for="f-email">Adresse e-mail<span class="req" aria-hidden="true">*</span></label><input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" autocapitalize="none" spellcheck="false" required aria-describedby="f-email-err"><div id="f-email-err"><p class="field__error" aria-live="polite"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg><span class="field__error-text"></span></p></div></div>
+          <div class="field"><label for="f-tel">Téléphone</label><input id="f-tel" name="telephone" type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9 +().-]{6,20}" aria-describedby="f-tel-hint f-tel-err"><span class="hint" id="f-tel-hint">Facultatif — pour être rappelé.</span><div id="f-tel-err"><p class="field__error" aria-live="polite"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg><span class="field__error-text"></span></p></div></div>
+          <div class="field field--full"><label for="f-motif">Objet de votre demande<span class="req" aria-hidden="true">*</span></label>
             <select id="f-motif" name="motif" required aria-describedby="f-motif-err">
               <option value="">Sélectionnez un objet</option>
               <option>Demande de prix / devis</option>
@@ -89,56 +71,40 @@
               <option>Produits Bioperfect</option>
               <option>Proposition de partenariat / fournisseur</option>
               <option>Autre demande</option>
-            </select>
-            <div id="f-motif-err"><p class="field__error" aria-live="polite"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg><span class="field__error-text"></span></p></div>
-          </div>
-          <div class="field field--full">
-            <label for="f-message">Votre message<span class="req" aria-hidden="true">*</span></label>
-            <textarea id="f-message" name="message" required minlength="20" aria-describedby="f-message-hint f-message-err"></textarea>
-            <span class="hint" id="f-message-hint">Précisez si possible les produits, quantités et destination souhaités.</span>
-            <div id="f-message-err"><p class="field__error" aria-live="polite"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg><span class="field__error-text"></span></p></div>
-          </div>
-          <div class="field--full">
-            <div class="consent">
-              <input id="f-consent" name="consentement" type="checkbox" value="Oui" required aria-describedby="f-consent-err">
-              <div>
-                <label for="f-consent">J'accepte que les informations saisies soient utilisées par Eggley Company pour répondre à ma demande. <a href="/confidentialite">En savoir plus sur la gestion de vos données</a>.<span class="req" aria-hidden="true">*</span></label>
-                <div id="f-consent-err"><p class="field__error" aria-live="polite"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg><span class="field__error-text"></span></p></div>
-              </div>
-            </div>
-          </div>
+            </select><div id="f-motif-err"><p class="field__error" aria-live="polite"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg><span class="field__error-text"></span></p></div></div>
+          <div class="field field--full"><label for="f-message">Votre message<span class="req" aria-hidden="true">*</span></label><textarea id="f-message" name="message" required minlength="20" enterkeyhint="enter" aria-describedby="f-message-hint f-message-err"></textarea><span class="hint" id="f-message-hint">Précisez si possible les produits, quantités et destination souhaités.</span><div id="f-message-err"><p class="field__error" aria-live="polite"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg><span class="field__error-text"></span></p></div></div>
+          <div class="field--full"><div class="consent"><input id="f-consent" name="consentement" type="checkbox" value="Oui" required aria-describedby="f-consent-err"><div><label for="f-consent">J'accepte que les informations saisies soient utilisées par Eggley Company pour répondre à ma demande. <a href="/confidentialite">En savoir plus sur la gestion de vos données</a>.<span class="req" aria-hidden="true">*</span></label><div id="f-consent-err"><p class="field__error" aria-live="polite"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" x2="12" y1="8" y2="12"/><line x1="12" x2="12.01" y1="16" y2="16"/></svg><span class="field__error-text"></span></p></div></div></div></div>
         </div>
-        <div class="form-footer" style="margin-top:1.75rem">
-          <button class="btn btn--primary" type="submit"><span class="btn__label">Envoyer le message</span> <svg class="icon icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
-          <span class="hint">Vos données sont traitées conformément à notre <a href="/confidentialite">politique de confidentialité</a>.</span>
+        <div class="form-footer">
+          <button class="btn btn--primary" type="submit"><span class="btn__label">Envoyer le message</span> <svg class="icon icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></button>
+          <span class="hint">Données traitées selon notre <a href="/confidentialite">politique de confidentialité</a>.</span>
         </div>
       </form>
     </div>
     <aside class="reveal" data-delay="1" aria-label="Coordonnées">
       <ul class="info-list">
-        <li><span class="card__icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span><div><span class="info-list__label">E-mail</span><span class="info-list__value"><a href="mailto:sce.commercial@eggleycompany.net">sce.commercial@eggleycompany.net</a></span></div></li>
-        <li><span class="card__icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><div><span class="info-list__label">Téléphone</span><span class="info-list__value"><a href="tel:+33953212471">+33 9 53 21 24 71</a><br><a href="tel:+33615053343">+33 6 15 05 33 43</a></span></div></li>
-        <li><span class="card__icon card__icon--green"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span><div><span class="info-list__label">Horaires</span><span class="info-list__value">Lundi – vendredi<small>08h00 – 18h00</small></span></div></li>
-        <li><span class="card__icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span><div><span class="info-list__label">Siège social &amp; entrepôt</span><span class="info-list__value">Eggley Company / Bioperfect<small>12 Ter, rue Boris Vian<br>95310 Saint-Ouen-l'Aumône, France</small></span></div></li>
-        <li><span class="card__icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg></span><div><span class="info-list__label">Bureau</span><span class="info-list__value">Rennes<small>5 allée de la Grande Treille, bureau 3<br>35000 Rennes, France</small></span></div></li>
+        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><div><span class="info-list__label">E-mail</span><span class="info-list__value"><a href="mailto:sce.commercial@eggleycompany.net">sce.commercial@eggleycompany.net</a></span></div></li>
+        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><div><span class="info-list__label">Téléphone</span><span class="info-list__value"><a href="tel:+33953212471">+33 9 53 21 24 71</a><br><a href="tel:+33615053343">+33 6 15 05 33 43</a></span></div></li>
+        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div><span class="info-list__label">Horaires</span><span class="info-list__value">Lundi – vendredi<small>08h00 – 18h00</small></span></div></li>
+        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><div><span class="info-list__label">Siège social &amp; entrepôt</span><span class="info-list__value">Eggley Company / Bioperfect<small>12 Ter, rue Boris Vian, 95310 Saint-Ouen-l'Aumône</small></span></div></li>
+        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg><div><span class="info-list__label">Bureau</span><span class="info-list__value">Rennes<small>5 allée de la Grande Treille, bureau 3, 35000 Rennes</small></span></div></li>
       </ul>
     </aside>
   </div>
 </section>
-<section class="section section--alt section--tight">
+<section class="section section--alt">
   <div class="container split">
-    <div class="reveal">
-      <p class="eyebrow">Nous trouver</p>
-      <h2>Saint-Ouen-l'Aumône, Val-d'Oise</h2>
-      <p class="lead">Notre siège social et notre entrepôt sont situés au 12 Ter, rue Boris Vian, 95310 Saint-Ouen-l'Aumône.</p>
-      <p><a class="link-arrow" href="https://www.google.com/maps/search/?api=1&query=12+Ter+Rue+Boris+Vian+95310+Saint-Ouen-l%27Aum%C3%B4ne" target="_blank" rel="noopener">Ouvrir l'itinéraire dans Google Maps <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg><span class="visually-hidden"> (nouvel onglet)</span></a></p>
+    <div>
+      <p class="overline">Nous trouver</p>
+      <h2 class="reveal">Saint-Ouen-l'Aumône, <em>Val-d'Oise.</em></h2>
+      <p class="lead reveal">Notre siège social et notre entrepôt sont situés au 12 Ter, rue Boris Vian, 95310 Saint-Ouen-l'Aumône.</p>
+      <p class="reveal"><a class="link" href="https://www.google.com/maps/search/?api=1&query=12+Ter+Rue+Boris+Vian+95310+Saint-Ouen-l%27Aum%C3%B4ne" target="_blank" rel="noopener">Itinéraire dans Google Maps <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg><span class="visually-hidden"> (nouvel onglet)</span></a></p>
     </div>
-    <div class="embed embed--map reveal" data-delay="1">
+    <div class="embed embed--map reveal-media">
       <button class="embed__trigger" type="button" data-embed="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2614.698591214362!2d2.1125750764757347!3d49.054354271359415!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6f5603ab5601b%3A0xab03ea618b40ddc2!2sBIO%20PERFRCT%20de%20EGGLEY%20COMPANY!5e0!3m2!1sfr!2sfr!4v1718388676428!5m2!1sfr!2sfr" data-title="Plan d'accès — Eggley Company, Saint-Ouen-l'Aumône">
-        <picture><source type="image/webp" srcset="/assets/img/cargo-800.webp 800w, /assets/img/cargo.webp 1600w" sizes="(max-width: 900px) 100vw, 50vw"><img src="/assets/img/cargo.jpg" srcset="/assets/img/cargo-800.jpg 800w, /assets/img/cargo.jpg 1600w" sizes="(max-width: 900px) 100vw, 50vw" alt="" width="1600" height="750" loading="lazy" decoding="async"></picture>
-        <span class="embed__play"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
-        <span class="embed__title">Afficher le plan</span>
-        <span class="embed__note">L'affichage charge Google Maps, qui peut déposer des cookies.</span>
+        <picture><source type="image/webp" srcset="/assets/img/cargo-p-480.webp 480w, /assets/img/cargo-p.webp 600w" sizes="(max-width: 900px) 100vw, 50vw"><img src="/assets/img/cargo-p.jpg" srcset="/assets/img/cargo-p-480.jpg 480w, /assets/img/cargo-p.jpg 600w" sizes="(max-width: 900px) 100vw, 50vw" alt="" width="600" height="750" loading="lazy" decoding="async"></picture>
+        <span class="embed__text"><span class="embed__title">Afficher le plan</span><span class="embed__note">L'affichage charge Google Maps, qui peut déposer des cookies.</span></span>
+        <span class="embed__play"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
       </button>
     </div>
   </div>
@@ -147,15 +113,15 @@
 <footer class="site-footer">
   <div class="container footer-top">
     <div class="footer-brand">
-      <a class="brand" href="/" aria-label="Eggley Company — accueil"><img class="brand__mark" src="/assets/img/eggley-mark.png" alt="" width="134" height="175"><span class="brand__text"><span class="brand__name">Eggley <span>Company</span></span><span class="brand__tag">Import · Export · Négoce</span></span></a>
-      <p>Eggley Company est une entreprise de négoce et de commerce international basée en France, spécialisée dans l'importation et l'exportation de matières premières, de produits alimentaires et de métaux.</p>
+      <a class="brand" href="/" aria-label="Eggley Company — accueil"><img class="brand__mark" src="/assets/img/eggley-mark.png" alt="" width="134" height="175"><span class="brand__text"><span class="brand__name">Eggley Company</span><span class="brand__tag">Négoce · Import · Export</span></span></a>
+      <p>Entreprise française de négoce et de commerce international : matières premières, produits alimentaires naturels et bio, et métaux.</p>
     </div>
     <div>
       <h2 class="footer-title">Navigation</h2>
       <ul class="footer-links">
         <li><a href="/">Accueil</a></li>
-        <li><a href="/apropos">À propos</a></li>
-        <li><a href="/services">Offres &amp; services</a></li>
+        <li><a href="/apropos">La maison</a></li>
+        <li><a href="/services">Nos gammes</a></li>
         <li><a href="/bioperfect">Bioperfect</a></li>
         <li><a href="/contact">Contact</a></li>
       </ul>
@@ -163,24 +129,24 @@
     <div>
       <h2 class="footer-title">Documents</h2>
       <ul class="footer-links">
-        <li><a href="/docs/Catalogue_EGGLEY_COMPANY.pdf" download>Catalogue Eggley Company (PDF)</a></li>
+        <li><a href="/docs/Catalogue_EGGLEY_COMPANY.pdf" download>Catalogue (PDF)</a></li>
         <li><a href="/docs/Dossier_presentation_BIOPERFECT.pdf" download>Dossier Bioperfect (PDF)</a></li>
         <li><a href="/mentions-legales">Mentions légales</a></li>
-        <li><a href="/confidentialite">Politique de confidentialité</a></li>
+        <li><a href="/confidentialite">Confidentialité</a></li>
       </ul>
     </div>
     <div>
       <h2 class="footer-title">Nous joindre</h2>
       <ul class="footer-contact">
-        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span><strong>Siège social &amp; entrepôt</strong>12 Ter, rue Boris Vian<br>95310 Saint-Ouen-l'Aumône, France</span></li>
-        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg><span><strong>Bureau de Rennes</strong>5 allée de la Grande Treille, bureau 3<br>35000 Rennes, France</span></li>
-        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="mailto:sce.commercial@eggleycompany.net">sce.commercial@eggleycompany.net</a></li>
-        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span><a href="tel:+33953212471">+33 9 53 21 24 71</a><br><a href="tel:+33615053343">+33 6 15 05 33 43</a></span></li>
+        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span><strong>Siège social &amp; entrepôt</strong>12 Ter, rue Boris Vian<br>95310 Saint-Ouen-l'Aumône</span></li>
+        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M12 14h.01"/><path d="M16 10h.01"/><path d="M16 14h.01"/><path d="M8 10h.01"/><path d="M8 14h.01"/></svg><span><strong>Bureau de Rennes</strong>5 allée de la Grande Treille, bureau 3<br>35000 Rennes</span></li>
+        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg><a href="mailto:sce.commercial@eggleycompany.net">sce.commercial@eggleycompany.net</a></li>
+        <li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span><a href="tel:+33953212471">+33 9 53 21 24 71</a><br><a href="tel:+33615053343">+33 6 15 05 33 43</a></span></li>
       </ul>
     </div>
   </div>
   <div class="container footer-bottom">
-    <p>© <span data-year>2026</span> Eggley Company Import Export — Bioperfect. Tous droits réservés.</p>
+    <p>© <span data-year>2026</span> Eggley Company Import Export — Bioperfect</p>
     <ul>
       <li><a href="/mentions-legales">Mentions légales</a></li>
       <li><a href="/confidentialite">Confidentialité</a></li>
@@ -188,7 +154,7 @@
     </ul>
   </div>
 </footer>
-<button class="to-top" type="button" aria-label="Revenir en haut de la page"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></button>
+<button class="to-top" type="button" aria-label="Revenir en haut de la page"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg></button>
 <script src="/assets/js/main.js" defer></script>
 </body>
 </html>

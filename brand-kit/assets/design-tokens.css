@@ -1,0 +1,146 @@
+/* Design Tokens - Auto-generated */
+/* Do not edit directly - modify tokens.json instead */
+
+/* === PRIMITIVES === */
+:root {
+  --primitive-color-primary-50: #E9ECF3;
+  --primitive-color-primary-100: #D3D9E7;
+  --primitive-color-primary-200: #A6B3CE;
+  --primitive-color-primary-300: #7A8EB6;
+  --primitive-color-primary-400: #4D689D;
+  --primitive-color-primary-500: #214285;
+  --primitive-color-primary-600: #1C3871;
+  --primitive-color-primary-700: #172E5D;
+  --primitive-color-primary-800: #122449;
+  --primitive-color-primary-900: #0D1A35;
+  --primitive-color-secondary-50: #F2F9F2;
+  --primitive-color-secondary-100: #E4F3E6;
+  --primitive-color-secondary-200: #C9E7CD;
+  --primitive-color-secondary-300: #AFDCB3;
+  --primitive-color-secondary-400: #94D09A;
+  --primitive-color-secondary-500: #79C481;
+  --primitive-color-secondary-600: #67A76E;
+  --primitive-color-secondary-700: #55895A;
+  --primitive-color-secondary-800: #436C47;
+  --primitive-color-secondary-900: #304E34;
+  --primitive-color-accent-50: #F6EFE6;
+  --primitive-color-accent-100: #ECE0CD;
+  --primitive-color-accent-200: #D9C09C;
+  --primitive-color-accent-300: #C7A16A;
+  --primitive-color-accent-400: #B48139;
+  --primitive-color-accent-500: #A16207;
+  --primitive-color-accent-600: #895306;
+  --primitive-color-accent-700: #714505;
+  --primitive-color-accent-800: #593604;
+  --primitive-color-accent-900: #402703;
+  --primitive-color-navy-800: #152B5C;
+  --primitive-color-navy-900: #0E1F45;
+  --primitive-color-navy-950: #0A1633;
+  --primitive-color-leaf-700: #2F7A3B;
+  --primitive-color-gold-300: #E2B65C;
+  --primitive-color-neutral-paper: #FBFAF7;
+  --primitive-color-neutral-ivory: #F3EFE7;
+  --primitive-color-neutral-sand: #E4DDCF;
+  --primitive-color-neutral-stone: #C9C0AE;
+  --primitive-color-neutral-ink: #10172A;
+  --primitive-color-neutral-text: #394055;
+  --primitive-color-neutral-muted: #5E6579;
+  --primitive-color-neutral-white: #FFFFFF;
+  --primitive-color-neutral-taupe: #8C8473;
+  --primitive-color-red-50: #FDECEA;
+  --primitive-color-red-700: #B42318;
+  --primitive-color-focus-500: #1D6FE0;
+  --primitive-font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --primitive-font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --primitive-fontSize-xs: 0.8125rem;
+  --primitive-fontSize-sm: 0.9375rem;
+  --primitive-fontSize-base: 1.0625rem;
+  --primitive-fontSize-lg: 1.25rem;
+  --primitive-fontSize-h3: 1.375rem;
+  --primitive-fontSize-h2: clamp(1.875rem, 1.3rem + 2.4vw, 2.75rem);
+  --primitive-fontSize-h1: clamp(2.25rem, 1.5rem + 3.2vw, 3.75rem);
+  --primitive-fontSize-display: clamp(2.5rem, 1.4rem + 4.6vw, 4.75rem);
+  --primitive-spacing-1: 0.25rem;
+  --primitive-spacing-2: 0.5rem;
+  --primitive-spacing-3: 0.75rem;
+  --primitive-spacing-4: 1rem;
+  --primitive-spacing-5: 1.25rem;
+  --primitive-spacing-6: 1.5rem;
+  --primitive-spacing-8: 2rem;
+  --primitive-spacing-10: 2.5rem;
+  --primitive-spacing-12: 3rem;
+  --primitive-spacing-16: 4rem;
+  --primitive-spacing-20: 5rem;
+  --primitive-spacing-section: clamp(4.5rem, 3rem + 6vw, 9rem);
+  --primitive-spacing-gutter: clamp(1rem, 0.4rem + 2.6vw, 2.5rem);
+  --primitive-radius-xs: 4px;
+  --primitive-radius-sm: 6px;
+  --primitive-radius-md: 10px;
+  --primitive-radius-pill: 999px;
+  --primitive-duration-press: 120ms;
+  --primitive-duration-ui: 200ms;
+  --primitive-duration-reveal: 700ms;
+  --primitive-duration-image: 900ms;
+  --primitive-easing-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --primitive-easing-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --primitive-easing-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+/* === SEMANTIC === */
+:root {
+  --color-bg: #FBFAF7;
+  --color-bg-alt: #F3EFE7;
+  --color-bg-dark: #0E1F45;
+  --color-bg-deep: #0A1633;
+  --color-surface: #FFFFFF;
+  --color-border: #E4DDCF;
+  --color-border-strong: #C9C0AE;
+  --color-heading: #10172A;
+  --color-text: #394055;
+  --color-muted: #5E6579;
+  --color-primary: #214285;
+  --color-primary-hover: #152B5C;
+  --color-on-primary: #FFFFFF;
+  --color-brand-green: #79C481;
+  --color-green-text: #2F7A3B;
+  --color-green-soft: #F2F9F2;
+  --color-accent: #895306;
+  --color-accent-on-dark: #E2B65C;
+  --color-on-dark: #FBFAF7;
+  --color-danger: #B42318;
+  --color-danger-soft: #FDECEA;
+  --color-focus: #1D6FE0;
+  --color-border-input: #8C8473;
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --radius-card: 6px;
+  --radius-media: 4px;
+  --radius-control: 6px;
+  --radius-pill: 999px;
+  --motion-press: 120ms;
+  --motion-ui: 200ms;
+  --motion-reveal: 700ms;
+  --motion-image: 900ms;
+  --motion-ease: cubic-bezier(0.23, 1, 0.32, 1);
+  --motion-ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --motion-ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --space-section: clamp(4.5rem, 3rem + 6vw, 9rem);
+  --space-gutter: clamp(1rem, 0.4rem + 2.6vw, 2.5rem);
+}
+
+/* === COMPONENTS === */
+:root {
+  --button-bg: #214285;
+  --button-fg: #FFFFFF;
+  --button-hover-bg: #152B5C;
+  --button-radius: 999px;
+  --button-height: 3rem;
+  --card-bg: #FFFFFF;
+  --card-border: #E4DDCF;
+  --card-radius: 6px;
+  --input-bg: #FFFFFF;
+  --input-border: #8C8473;
+  --input-radius: 6px;
+  --input-height: 3.25rem;
+  --header-height: 4.75rem;
+}

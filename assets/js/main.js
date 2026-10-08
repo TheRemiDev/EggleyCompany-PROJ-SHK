@@ -52,8 +52,8 @@
     else if (mq.addListener) mq.addListener(onChange);
   }
 
-  /* Apparition au défilement */
-  var reveals = document.querySelectorAll(".reveal");
+  /* Apparition au défilement (texte : .reveal, images : .reveal-media) */
+  var reveals = document.querySelectorAll(".reveal, .reveal-media");
   if (reveals.length) {
     if (reduceMotion || !("IntersectionObserver" in window)) {
       reveals.forEach(function (el) { el.classList.add("is-visible"); });
@@ -65,9 +65,75 @@
             io.unobserve(entry.target);
           }
         });
-      }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+      }, { rootMargin: "0px 0px -10% 0px", threshold: 0.05 });
       reveals.forEach(function (el) { io.observe(el); });
     }
+  }
+
+  /* Index des gammes : aperçu qui suit la souris (décoratif, pointeur précis uniquement).
+     Interpolation amortie sans rebond, part toujours de la position affichée. */
+  var index = document.querySelector("[data-index]");
+  var finePointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  if (index && finePointer) {
+    var preview = document.createElement("div");
+    preview.className = "index-preview";
+    preview.setAttribute("aria-hidden", "true");
+    var previewImg = document.createElement("img");
+    previewImg.alt = "";
+    var firstRow = index.querySelector("[data-preview]");
+    if (firstRow) previewImg.src = firstRow.getAttribute("data-preview");
+    preview.appendChild(previewImg);
+    document.body.appendChild(preview);
+    var pos = { x: 0, y: 0 }, target = { x: 0, y: 0 }, raf = null, active = false;
+    var halfW = 130, halfH = 162;
+    var step = function () {
+      var k = reduceMotion ? 1 : 0.2;
+      pos.x += (target.x - pos.x) * k;
+      pos.y += (target.y - pos.y) * k;
+      preview.style.transform = "translate3d(" + (pos.x - halfW) + "px," + (pos.y - halfH) + "px,0)";
+      if (active || Math.abs(target.x - pos.x) > 0.5 || Math.abs(target.y - pos.y) > 0.5) {
+        raf = requestAnimationFrame(step);
+      } else {
+        raf = null;
+      }
+    };
+    index.querySelectorAll("[data-preview]").forEach(function (row) {
+      var img = new Image(); img.src = row.getAttribute("data-preview"); /* préchargement */
+      row.addEventListener("pointerenter", function (e) {
+        if (e.pointerType !== "mouse") return;
+        previewImg.src = row.getAttribute("data-preview");
+        if (!active) { pos.x = target.x = e.clientX; pos.y = target.y = e.clientY; }
+        active = true;
+        preview.classList.add("is-visible");
+        if (!raf) raf = requestAnimationFrame(step);
+      });
+    });
+    index.addEventListener("pointermove", function (e) {
+      if (e.pointerType !== "mouse") return;
+      target.x = e.clientX; target.y = e.clientY;
+      if (!raf) raf = requestAnimationFrame(step);
+    });
+    index.addEventListener("pointerleave", function () {
+      active = false;
+      preview.classList.remove("is-visible");
+    });
+    window.addEventListener("scroll", function () {
+      if (active) { active = false; preview.classList.remove("is-visible"); }
+    }, { passive: true });
+  }
+
+  /* Chapitres : indique le chapitre en cours dans la colonne de progression */
+  var chapterLinks = document.querySelectorAll(".chapters__progress a");
+  if (chapterLinks.length && "IntersectionObserver" in window) {
+    var setCurrent = function (id) {
+      chapterLinks.forEach(function (a) {
+        a.setAttribute("aria-current", a.getAttribute("href") === "#" + id ? "true" : "false");
+      });
+    };
+    var co = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) { if (entry.isIntersecting) setCurrent(entry.target.id); });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    document.querySelectorAll(".chapter[id]").forEach(function (c) { co.observe(c); });
   }
 
   /* Contenus tiers (YouTube, Google Maps) chargés uniquement au clic */

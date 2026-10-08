@@ -32,9 +32,9 @@ AddDefaultCharset UTF-8
   RewriteRule ^contacts(\.html)?$ %{ENV:PROTO}://%{HTTP_HOST}/contact [L,R=301]
   RewriteRule ^service-details(\.html)?$ %{ENV:PROTO}://%{HTTP_HOST}/services [L,R=301]
 
-  # 4. /index ou /index.html -> /
-  RewriteCond %{THE_REQUEST} \s/+index(\.html)?[\s?] [NC]
-  RewriteRule ^ %{ENV:PROTO}://%{HTTP_HOST}/ [L,R=301]
+  # 4. /index ou /index.html -> /   (idem pour /v1/index)
+  RewriteCond %{THE_REQUEST} \s/+(v1/)?index(\.html)?[\s?] [NC]
+  RewriteRule ^ %{ENV:PROTO}://%{HTTP_HOST}/%1 [L,R=301]
 
   # 5. /page.html -> /page (seulement pour les requêtes du navigateur)
   RewriteCond %{THE_REQUEST} \s/+([^\s?]+?)\.html[\s?] [NC]
@@ -44,11 +44,11 @@ AddDefaultCharset UTF-8
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^(.+)/$ %{ENV:PROTO}://%{HTTP_HOST}/$1 [L,R=301]
 
-  # 7. /page -> sert page.html sans changer l'adresse
+  # 7. /page -> sert page.html sans changer l'adresse (v2 à la racine, v1 archivée sous /v1/)
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{DOCUMENT_ROOT}/$1.html -f
-  RewriteRule ^([a-z0-9-]+)$ $1.html [L]
+  RewriteRule ^((?:v1/)?[a-z0-9-]+)$ $1.html [L]
 </IfModule>
 
 <IfModule mod_headers.c>
