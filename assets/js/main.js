@@ -92,6 +92,19 @@
   if (form) {
     form.setAttribute("novalidate", "");
     var status = form.querySelector(".form-status");
+    if (status) {
+      status.setAttribute("tabindex", "-1");
+      status.addEventListener("click", function (ev) {
+        var link = ev.target.closest("a[href^='#']");
+        if (!link) return;
+        ev.preventDefault();
+        var target = document.getElementById(link.getAttribute("href").slice(1));
+        if (target) {
+          target.scrollIntoView({ block: "center", behavior: reduceMotion ? "auto" : "smooth" });
+          target.focus({ preventScroll: true });
+        }
+      });
+    }
     var submit = form.querySelector('button[type="submit"]');
 
     var messages = {
@@ -143,10 +156,25 @@
       if (firstInvalid) {
         e.preventDefault();
         if (status) {
-          status.textContent = "Certains champs doivent être corrigés avant l'envoi.";
+          /* Récapitulatif cliquable des champs à corriger */
+          var invalid = Array.prototype.filter.call(inputs, function (input) {
+            return input.getAttribute("aria-invalid") === "true";
+          });
+          var items = invalid.map(function (input) {
+            var label = form.querySelector('label[for="' + input.id + '"]');
+            var name = input.type === "checkbox" ? "Consentement au traitement des données"
+              : (label ? label.textContent.replace("*", "").trim() : input.name);
+            return '<li><a href="#' + input.id + '">' + name + "</a></li>";
+          });
+          var plural = invalid.length > 1;
+          status.innerHTML = '<p class="form-status__title">' +
+            (plural ? invalid.length + " champs doivent être corrigés" : "Un champ doit être corrigé") +
+            " avant l'envoi :</p><ul>" + items.join("") + "</ul>";
           status.classList.add("is-error");
+          status.focus();
+        } else {
+          firstInvalid.focus();
         }
-        firstInvalid.focus();
         return;
       }
       if (status) { status.textContent = ""; status.classList.remove("is-error"); }

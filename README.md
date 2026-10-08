@@ -16,11 +16,46 @@ Site statique (HTML/CSS/JS, sans dépendance ni étape de build) d'Eggley Compan
 | `confidentialite.html` | Politique de confidentialité et cookies (RGPD) |
 | `plan-du-site.html`, `404.html` | Plan du site, page d'erreur |
 
-Les noms `index.html`, `apropos.html`, `services.html` et `bioperfect.html` reprennent ceux de l'ancien site pour conserver le référencement ; `.htaccess` redirige `contact.php` vers `contact.html`.
+Les URL sont propres (sans `.html`) : `/apropos`, `/services`, `/contact`… Le `.htaccess` sert le bon fichier, redirige en 301 les anciennes adresses (`/apropos.html`, `/contact.php`, `/index.html`…), force HTTPS et le domaine sans `www`.
 
-## Déploiement
+## Déploiement sur Apache 2 (Debian / Ubuntu)
 
-Copier tout le contenu du dépôt (sauf `.claude/` et `README.md`) à la racine du domaine `eggleycompany.net`. Sur Apache, `.htaccess` gère HTTPS, la page 404, les redirections et le cache.
+Aucun PHP n'est nécessaire : le formulaire passe par FormSubmit.
+
+```bash
+sudo apt update
+sudo apt install -y apache2 rsync
+sudo a2enmod rewrite headers expires deflate
+sudo mkdir -p /var/www/eggleycompany.net
+
+sudo tee /etc/apache2/sites-available/eggleycompany.net.conf > /dev/null <<'CONF'
+<VirtualHost *:80>
+    ServerName eggleycompany.net
+    ServerAlias www.eggleycompany.net
+    DocumentRoot /var/www/eggleycompany.net
+    <Directory /var/www/eggleycompany.net>
+        Options -Indexes +FollowSymLinks -MultiViews
+        AllowOverride All
+        Require all granted
+    </Directory>
+    ErrorLog ${APACHE_LOG_DIR}/eggleycompany_error.log
+    CustomLog ${APACHE_LOG_DIR}/eggleycompany_access.log combined
+</VirtualHost>
+CONF
+
+sudo a2ensite eggleycompany.net.conf
+sudo a2dissite 000-default.conf
+sudo apache2ctl configtest && sudo systemctl reload apache2
+
+# HTTPS (les DNS doivent pointer vers le serveur)
+sudo apt install -y certbot python3-certbot-apache
+sudo certbot --apache -d eggleycompany.net -d www.eggleycompany.net --redirect
+
+# Mise en ligne / mise à jour des fichiers
+git clone -b claude/blissful-davinci-k26pwu https://github.com/theremidev/eggleycompany-proj-shk.git /tmp/eggley   # ou : git -C /tmp/eggley pull
+sudo rsync -a --delete --exclude='.git' --exclude='.claude' --exclude='.gitignore' --exclude='README.md' /tmp/eggley/ /var/www/eggleycompany.net/
+sudo chown -R www-data:www-data /var/www/eggleycompany.net
+```
 
 ## Avant la mise en ligne
 

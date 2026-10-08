@@ -1,27 +1,58 @@
 # Eggley Company — configuration Apache
+# Prérequis : modules rewrite, headers, expires, deflate et « AllowOverride All » sur le dossier du site.
 
-Options -Indexes
+Options -Indexes -MultiViews
 DirectoryIndex index.html
 ErrorDocument 404 /404.html
 
+AddType font/woff2 .woff2
+AddType image/webp .webp
+AddDefaultCharset UTF-8
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
-  # Forcer HTTPS
+
+  # 1. Forcer HTTPS
   RewriteCond %{HTTPS} off
   RewriteCond %{HTTP:X-Forwarded-Proto} !https
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-</IfModule>
 
-# Anciennes adresses de l'ancien site
-Redirect 301 /contact.php /contact.html
-Redirect 301 /contacts.html /contact.html
-Redirect 301 /service-details.html /services.html
+  # 2. Domaine unique : www.eggleycompany.net -> eggleycompany.net
+  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
+
+  # 3. Anciennes adresses de l'ancien site
+  RewriteRule ^contact\.php$ https://%{HTTP_HOST}/contact [L,R=301]
+  RewriteRule ^contacts(\.html)?$ https://%{HTTP_HOST}/contact [L,R=301]
+  RewriteRule ^service-details(\.html)?$ https://%{HTTP_HOST}/services [L,R=301]
+
+  # 4. /index ou /index.html -> /
+  RewriteCond %{THE_REQUEST} \s/+index(\.html)?[\s?] [NC]
+  RewriteRule ^ https://%{HTTP_HOST}/ [L,R=301]
+
+  # 5. /page.html -> /page (seulement pour les requêtes du navigateur)
+  RewriteCond %{THE_REQUEST} \s/+([^\s?]+?)\.html[\s?] [NC]
+  RewriteRule ^ https://%{HTTP_HOST}/%1 [L,R=301,NE]
+
+  # 6. Supprimer la barre oblique finale (/page/ -> /page)
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.+)/$ https://%{HTTP_HOST}/$1 [L,R=301]
+
+  # 7. /page -> sert page.html sans changer l'adresse
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+  RewriteRule ^([a-z0-9-]+)$ $1.html [L]
+</IfModule>
 
 <IfModule mod_headers.c>
   Header always set X-Content-Type-Options "nosniff"
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
   Header always set X-Frame-Options "SAMEORIGIN"
   Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  <FilesMatch "\.(css|js|woff2|webp|jpe?g|png|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
 </IfModule>
 
 <IfModule mod_deflate.c>
@@ -41,6 +72,3 @@ Redirect 301 /service-details.html /services.html
   ExpiresByType font/woff2 "access plus 1 year"
   ExpiresByType application/pdf "access plus 1 month"
 </IfModule>
-
-AddType font/woff2 .woff2
-AddType image/webp .webp
