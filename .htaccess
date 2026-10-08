@@ -12,31 +12,37 @@ AddDefaultCharset UTF-8
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
-  # 1. Forcer HTTPS
-  RewriteCond %{HTTPS} off
-  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  # 0. Protocole courant (https derrière un proxy aussi) -> variable PROTO
+  RewriteRule ^ - [E=PROTO:http]
+  RewriteCond %{HTTPS} =on [OR]
+  RewriteCond %{HTTP:X-Forwarded-Proto} =https
+  RewriteRule ^ - [E=PROTO:https]
+
+  # 1. Forcer HTTPS — uniquement sur le vrai domaine (un test par IP reste en http)
+  RewriteCond %{HTTP_HOST} ^(www\.)?eggleycompany\.net$ [NC]
+  RewriteCond %{ENV:PROTO} =http
   RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
   # 2. Domaine unique : www.eggleycompany.net -> eggleycompany.net
-  RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+  RewriteCond %{HTTP_HOST} ^www\.(eggleycompany\.net)$ [NC]
   RewriteRule ^ https://%1%{REQUEST_URI} [L,R=301]
 
   # 3. Anciennes adresses de l'ancien site
-  RewriteRule ^contact\.php$ https://%{HTTP_HOST}/contact [L,R=301]
-  RewriteRule ^contacts(\.html)?$ https://%{HTTP_HOST}/contact [L,R=301]
-  RewriteRule ^service-details(\.html)?$ https://%{HTTP_HOST}/services [L,R=301]
+  RewriteRule ^contact\.php$ %{ENV:PROTO}://%{HTTP_HOST}/contact [L,R=301]
+  RewriteRule ^contacts(\.html)?$ %{ENV:PROTO}://%{HTTP_HOST}/contact [L,R=301]
+  RewriteRule ^service-details(\.html)?$ %{ENV:PROTO}://%{HTTP_HOST}/services [L,R=301]
 
   # 4. /index ou /index.html -> /
   RewriteCond %{THE_REQUEST} \s/+index(\.html)?[\s?] [NC]
-  RewriteRule ^ https://%{HTTP_HOST}/ [L,R=301]
+  RewriteRule ^ %{ENV:PROTO}://%{HTTP_HOST}/ [L,R=301]
 
   # 5. /page.html -> /page (seulement pour les requêtes du navigateur)
   RewriteCond %{THE_REQUEST} \s/+([^\s?]+?)\.html[\s?] [NC]
-  RewriteRule ^ https://%{HTTP_HOST}/%1 [L,R=301,NE]
+  RewriteRule ^ %{ENV:PROTO}://%{HTTP_HOST}/%1 [L,R=301,NE]
 
   # 6. Supprimer la barre oblique finale (/page/ -> /page)
   RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteRule ^(.+)/$ https://%{HTTP_HOST}/$1 [L,R=301]
+  RewriteRule ^(.+)/$ %{ENV:PROTO}://%{HTTP_HOST}/$1 [L,R=301]
 
   # 7. /page -> sert page.html sans changer l'adresse
   RewriteCond %{REQUEST_FILENAME} !-f

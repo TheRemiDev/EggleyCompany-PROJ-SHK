@@ -57,6 +57,10 @@ sudo rsync -a --delete --exclude='.git' --exclude='.claude' --exclude='.gitignor
 sudo chown -R www-data:www-data /var/www/eggleycompany.net
 ```
 
+### Serveur de test (sans nom de domaine)
+
+Pour tester sur le site par défaut d'Apache (`/var/www/html`, accès par IP en http), le bloc `<Directory /var/www/html>` du fichier `000-default.conf` doit contenir `AllowOverride All`, et le module `rewrite` doit être activé. Le passage forcé en HTTPS ne s'applique qu'au domaine `eggleycompany.net`.
+
 ## Avant la mise en ligne
 
 1. **Mentions légales** : compléter le capital social et les coordonnées de l'hébergeur (zones surlignées dans `mentions-legales.html`).
