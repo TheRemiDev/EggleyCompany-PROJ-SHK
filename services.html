@@ -20,13 +20,14 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preload" href="/assets/fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" type="image/webp" imagesrcset="/assets/img/photos/cafe-torrefie-w-1280.webp 1280w, /assets/img/photos/cafe-torrefie-w-2400.webp 2400w" imagesizes="100vw">
 <link rel="stylesheet" href="/assets/css/tokens.css">
 <link rel="stylesheet" href="/assets/css/style.css">
 <script>document.documentElement.classList.add("js")</script>
 </head>
-<body>
+<body class="has-photo-hero">
 <a class="skip-link" href="#contenu">Aller au contenu</a>
 <header class="site-header">
   <div class="container site-header__inner">
@@ -40,13 +41,11 @@
 </header>
 <main id="contenu" tabindex="-1">
 <section class="page-hero">
-  <div class="container">
+  <div class="page-hero__media"><picture><source type="image/webp" srcset="/assets/img/photos/cafe-torrefie-w-1280.webp 1280w, /assets/img/photos/cafe-torrefie-w-2400.webp 2400w" sizes="100vw"><img src="/assets/img/photos/cafe-torrefie-w-1280.jpg" alt="Sac de grains de café" width="2400" height="1350" fetchpriority="high" decoding="async"></picture></div>
+  <div class="container page-hero__inner">
     <nav class="breadcrumb" aria-label="Fil d'Ariane"><ol><li><a href="/">Accueil</a></li><li><span aria-current="page">Nos gammes</span></li></ol></nav>
-    <div class="page-hero__grid">
-      <h1>Nos gammes <em>&amp; services.</em></h1>
-      <p>Importer, exporter et distribuer vers toutes les destinations : un aperçu de nos produits et de notre accompagnement, de la négociation à la livraison.</p>
-    </div>
-    <div class="page-hero__band reveal-media"><picture><source type="image/webp" srcset="/assets/img/cacaoyer-w-800.webp 800w, /assets/img/cacaoyer-w.webp 1475w" sizes="100vw"><img src="/assets/img/cacaoyer-w.jpg" srcset="/assets/img/cacaoyer-w-800.jpg 800w, /assets/img/cacaoyer-w.jpg 1475w" sizes="100vw" alt="Cacaoyer chargé de cabosses" width="1475" height="830" fetchpriority="high"></picture></div>
+    <h1>Nos gammes <em>&amp; services.</em></h1>
+    <p>Importer, exporter et distribuer vers toutes les destinations : nos produits et notre accompagnement, de la négociation à la livraison.</p>
   </div>
 </section>
 <section class="section">
@@ -57,9 +56,7 @@
       <p class="lead reveal">Eggley Company importe et exporte des matières premières telles que le café, le cacao, les dérivés de cacao, le sucre, le soja, le sésame, le riz, les huiles végétales brutes et raffinées, ainsi que des métaux.</p>
       <p class="reveal">L'entreprise propose également des produits alimentaires bio et non bio — fruits et légumes frais, séchés et surgelés, produits à base de poulet frais et surgelés — vers toutes les destinations. Elle est en outre impliquée dans l'achat, la vente et la distribution de produits agroalimentaires en France, en Europe, en Afrique et à l'échelle internationale.</p>
     </div>
-    <div class="reveal" data-delay="1">
-      <ul class="checklist"><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Import-export vers et depuis toutes les destinations</span></li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Achat, vente et distribution agroalimentaire</span></li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Transport et livraison des marchandises</span></li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Douane, réglementation et sécurité alimentaire</span></li></ul>
-    </div>
+    <div class="reveal" data-delay="1"><ul class="checklist"><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Import-export vers et depuis toutes les destinations</span></li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Achat, vente et distribution agroalimentaire</span></li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Transport et livraison des marchandises</span></li><li><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M20 6 9 17l-5-5"/></svg><span>Douane, réglementation et sécurité alimentaire</span></li></ul></div>
   </div>
 </section>
 <section class="section section--alt">
@@ -69,7 +66,7 @@
       <p class="reveal" data-delay="1">Tarifs établis selon les produits et les quantités : contactez-nous pour recevoir une offre. <a class="link" href="/docs/Catalogue_EGGLEY_COMPANY.pdf" download>Catalogue complet (PDF) <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a></p>
     </div>
     <article class="offer" id="matieres-premieres">
-  <div class="offer__media reveal-media"><picture><source type="image/webp" srcset="/assets/img/cafe-p-480.webp 480w, /assets/img/cafe-p.webp 664w" sizes="(max-width: 860px) 100vw, 38vw"><img src="/assets/img/cafe-p.jpg" srcset="/assets/img/cafe-p-480.jpg 480w, /assets/img/cafe-p.jpg 664w" sizes="(max-width: 860px) 100vw, 38vw" alt="Grains de café torréfiés" width="664" height="830" loading="lazy" decoding="async"></picture></div>
+  <div class="offer__media reveal-media"><picture><source type="image/webp" srcset="/assets/img/photos/cacao-feves-l-700.webp 700w, /assets/img/photos/cacao-feves-l-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 46vw"><img src="/assets/img/photos/cacao-feves-l-700.jpg" alt="Fèves de cacao" width="1200" height="960" loading="lazy" decoding="async"></picture></div>
   <div class="reveal">
     <span class="offer__num">i.</span>
     <h3>Matières premières &amp; métaux</h3>
@@ -78,7 +75,7 @@
   </div>
 </article>
     <article class="offer" id="alimentaire">
-  <div class="offer__media reveal-media"><picture><source type="image/webp" srcset="/assets/img/fruits-p-480.webp 480w, /assets/img/fruits-p.webp 600w" sizes="(max-width: 860px) 100vw, 38vw"><img src="/assets/img/fruits-p.jpg" srcset="/assets/img/fruits-p-480.jpg 480w, /assets/img/fruits-p.jpg 600w" sizes="(max-width: 860px) 100vw, 38vw" alt="Mangues, ananas, papayes et bananes" width="600" height="750" loading="lazy" decoding="async"></picture></div>
+  <div class="offer__media reveal-media"><picture><source type="image/webp" srcset="/assets/img/photos/papayes-l-700.webp 700w, /assets/img/photos/papayes-l-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 46vw"><img src="/assets/img/photos/papayes-l-700.jpg" alt="Papayes dans des cagettes" width="1200" height="960" loading="lazy" decoding="async"></picture></div>
   <div class="reveal">
     <span class="offer__num">ii.</span>
     <h3>Fruits &amp; légumes frais</h3>
@@ -87,7 +84,7 @@
   </div>
 </article>
     <article class="offer" id="surgeles">
-  <div class="offer__media reveal-media"><picture><source type="image/webp" srcset="/assets/img/mosaique-p-480.webp 480w, /assets/img/mosaique-p.webp 600w" sizes="(max-width: 860px) 100vw, 38vw"><img src="/assets/img/mosaique-p.jpg" srcset="/assets/img/mosaique-p-480.jpg 480w, /assets/img/mosaique-p.jpg 600w" sizes="(max-width: 860px) 100vw, 38vw" alt="Mosaïque de fruits, céréales et épices" width="600" height="750" loading="lazy" decoding="async"></picture></div>
+  <div class="offer__media reveal-media"><picture><source type="image/webp" srcset="/assets/img/photos/ananas-l-700.webp 700w, /assets/img/photos/ananas-l-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 46vw"><img src="/assets/img/photos/ananas-l-700.jpg" alt="Ananas alignés" width="1200" height="960" loading="lazy" decoding="async"></picture></div>
   <div class="reveal">
     <span class="offer__num">iii.</span>
     <h3>Fruits, volailles &amp; viandes surgelés</h3>
@@ -96,7 +93,7 @@
   </div>
 </article>
     <article class="offer" id="poudres-epices">
-  <div class="offer__media reveal-media"><picture><source type="image/webp" srcset="/assets/img/cacao-poudre-p-480.webp 480w, /assets/img/cacao-poudre-p.webp 664w" sizes="(max-width: 860px) 100vw, 38vw"><img src="/assets/img/cacao-poudre-p.jpg" srcset="/assets/img/cacao-poudre-p-480.jpg 480w, /assets/img/cacao-poudre-p.jpg 664w" sizes="(max-width: 860px) 100vw, 38vw" alt="Cacao en poudre" width="664" height="830" loading="lazy" decoding="async"></picture></div>
+  <div class="offer__media reveal-media"><picture><source type="image/webp" srcset="/assets/img/photos/curcuma-l-700.webp 700w, /assets/img/photos/curcuma-l-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 46vw"><img src="/assets/img/photos/curcuma-l-700.jpg" alt="Racine, tranches et poudre de curcuma" width="1200" height="960" loading="lazy" decoding="async"></picture></div>
   <div class="reveal">
     <span class="offer__num">iv.</span>
     <h3>Fruits séchés, poudres &amp; épices</h3>
@@ -105,7 +102,7 @@
   </div>
 </article>
     <article class="offer" id="autres-produits">
-  <div class="offer__media reveal-media"><picture><source type="image/webp" srcset="/assets/img/cajou-p-480.webp 480w, /assets/img/cajou-p.webp 664w" sizes="(max-width: 860px) 100vw, 38vw"><img src="/assets/img/cajou-p.jpg" srcset="/assets/img/cajou-p-480.jpg 480w, /assets/img/cajou-p.jpg 664w" sizes="(max-width: 860px) 100vw, 38vw" alt="Noix de cajou décortiquées" width="664" height="830" loading="lazy" decoding="async"></picture></div>
+  <div class="offer__media reveal-media"><picture><source type="image/webp" srcset="/assets/img/photos/riz-l-700.webp 700w, /assets/img/photos/riz-l-1200.webp 1200w" sizes="(max-width: 860px) 100vw, 46vw"><img src="/assets/img/photos/riz-l-700.jpg" alt="Grains de riz" width="1200" height="960" loading="lazy" decoding="async"></picture></div>
   <div class="reveal">
     <span class="offer__num">v.</span>
     <h3>Autres produits alimentaires</h3>
@@ -128,24 +125,24 @@
     </ol>
   </div>
 </section>
-<section class="cta on-dark">
-  <div class="container cta__inner">
-    <h2 class="reveal">Demandez une offre <em>adaptée à vos volumes.</em></h2>
-    <div class="cta__side reveal" data-delay="1">
-      <p>Précisez-nous les produits, quantités et destinations : notre service commercial revient vers vous rapidement.</p>
-      <div class="cta__actions">
-        <a class="btn btn--light" href="/contact">Demander une offre <svg class="icon icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-        <a class="btn btn--outline-light" href="/docs/Catalogue_EGGLEY_COMPANY.pdf" download><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg> Catalogue (PDF)</a>
-      </div>
+<section class="photo-band cta-band on-photo" aria-labelledby="cta-titre">
+  <div class="photo-band__media"><picture><source type="image/webp" srcset="/assets/img/photos/navire-sillage-w-1280.webp 1280w, /assets/img/photos/navire-sillage-w-2400.webp 2400w" sizes="100vw"><img src="/assets/img/photos/navire-sillage-w-1280.jpg" alt="" width="2400" height="1350" loading="lazy" decoding="async"></picture></div>
+  <div class="container photo-band__inner">
+    <p class="overline">Contact</p>
+    <h2 id="cta-titre" class="reveal">Demandez une offre <em>adaptée à vos volumes.</em></h2>
+    <p class="reveal" data-delay="1">Précisez-nous les produits, quantités et destinations : notre service commercial revient vers vous rapidement.</p>
+    <div class="cta-band__actions reveal" data-delay="2">
+      <a class="btn btn--light" href="/contact">Demander une offre <svg class="icon icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      <a class="btn btn--glass" href="/docs/Catalogue_EGGLEY_COMPANY.pdf" download><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg> Catalogue (PDF, 7 Mo)</a>
     </div>
   </div>
 </section>
 </main>
 <footer class="site-footer">
   <div class="container footer-top">
-    <div class="footer-brand">
-      <a class="brand" href="/" aria-label="Eggley Company — accueil"><img class="brand__mark" src="/assets/img/eggley-mark.png" alt="" width="134" height="175"><span class="brand__text"><span class="brand__name">Eggley Company</span><span class="brand__tag">Négoce · Import · Export</span></span></a>
-      <p>Entreprise française de négoce et de commerce international : matières premières, produits alimentaires naturels et bio, et métaux.</p>
+    <div>
+      <p class="footer-lead">Maison de négoce et de commerce international, <em>depuis 2018.</em></p>
+      <a class="btn btn--light" href="/contact">Demander une offre <svg class="icon icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
     </div>
     <div>
       <h2 class="footer-title">Navigation</h2>
@@ -176,6 +173,7 @@
       </ul>
     </div>
   </div>
+  <p class="footer-wordmark" aria-hidden="true">Eggley <em>Company</em></p>
   <div class="container footer-bottom">
     <p>© <span data-year>2026</span> Eggley Company Import Export — Bioperfect</p>
     <ul>

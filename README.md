@@ -6,13 +6,14 @@ Site statique (HTML/CSS/JS, sans dépendance ni étape de build) d'Eggley Compan
 
 | Emplacement | Contenu |
 |---|---|
-| `/` (racine) | **Site v2** — registre éditorial (Playfair Display + Inter, neutres chauds), servi sur `eggleycompany.net/` |
-| `v1/` | **Site v1** archivé, consultable sur `/v1/` (non indexé, `noindex` + `robots.txt`) |
+| `/` (racine) | **Site v3** (version actuelle) — photographie plein cadre, Fraunces + Inter, carte des flux |
+| `v2/` | Site v2 archivé (registre éditorial), consultable sur `/v2/` (non indexé) |
+| `v1/` | Site v1 archivé, consultable sur `/v1/` (non indexé) |
 | `docs/` | Catalogue et dossier Bioperfect (PDF), partagés par les deux versions |
-| `assets/css/tokens.css` | Design tokens v2 (primitifs → sémantiques → composants), générés depuis `brand-kit/` |
-| `brand-kit/` | Charte de marque v2 (`docs/brand-guidelines.md`), tokens JSON, bannières LinkedIn et Open Graph — **ne pas mettre en ligne** |
+| `assets/css/tokens.css` | Design tokens v3 (primitifs → sémantiques → composants), générés depuis `brand-kit/` |
+| `brand-kit/` | Charte de marque v3 (`docs/brand-guidelines.md`), tokens JSON, bannières LinkedIn et Open Graph — **ne pas mettre en ligne** |
 
-Pages (v2 et v1) : accueil, `apropos`, `services`, `bioperfect`, `contact`, `merci`, `mentions-legales`, `confidentialite`, `plan-du-site`, `404`.
+Pages (identiques dans les trois versions) : accueil, `apropos`, `services`, `bioperfect`, `contact`, `merci`, `mentions-legales`, `confidentialite`, `plan-du-site`, `404`.
 
 Les URL sont propres (sans `.html`) : `/apropos`, `/services`, `/v1/contact`… Le `.htaccess` sert le bon fichier, redirige en 301 les anciennes adresses (`/apropos.html`, `/contact.php`, `/index.html`…), force HTTPS et le domaine sans `www` (uniquement sur `eggleycompany.net`).
 
@@ -64,3 +65,7 @@ Pour tester sur le site par défaut d'Apache (`/var/www/html`, accès par IP en 
 1. **Mentions légales** : compléter le capital social et les coordonnées de l'hébergeur (zones surlignées dans `mentions-legales.html`).
 2. **Formulaire** : il passe par [FormSubmit](https://formsubmit.co) vers `sce.commercial@eggleycompany.net`. Au premier envoi, FormSubmit envoie un e-mail d'activation à cette adresse : cliquer sur le lien pour activer le formulaire.
 3. Vérifier que les numéros de téléphone (repris du catalogue) et le bureau de Rennes sont toujours d'actualité.
+
+## Crédits photo
+
+Les photographies du site v3 proviennent d'[Unsplash](https://unsplash.com) sous licence Unsplash (usage commercial autorisé, sans attribution obligatoire). Les auteurs sont crédités dans les mentions légales.

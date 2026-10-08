@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /merci
 Disallow: /v1/
+Disallow: /v2/
 
 Sitemap: https://eggleycompany.net/sitemap.xml

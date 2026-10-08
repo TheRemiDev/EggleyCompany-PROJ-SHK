@@ -20,7 +20,7 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preload" href="/assets/fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/tokens.css">
 <link rel="stylesheet" href="/assets/css/style.css">
@@ -39,13 +39,11 @@
   </div>
 </header>
 <main id="contenu" tabindex="-1">
-<section class="page-hero">
-  <div class="container">
+<section class="page-hero page-hero--plain">
+  <div class="container page-hero__inner">
     <nav class="breadcrumb" aria-label="Fil d'Ariane"><ol><li><a href="/">Accueil</a></li><li><span aria-current="page">Mentions légales</span></li></ol></nav>
-    <div class="page-hero__grid">
-      <h1>Mentions légales</h1>
-      <p>Informations légales relatives au site eggleycompany.net et conditions d'utilisation.</p>
-    </div>
+    <h1>Mentions légales</h1>
+    <p>Informations légales relatives au site eggleycompany.net et conditions d'utilisation.</p>
   </div>
 </section>
 <section class="section section--flush-top">
@@ -77,16 +75,15 @@
 <p>Le site peut contenir des liens vers des sites tiers (YouTube, Google Maps…). Eggley Company n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu ou à leurs pratiques en matière de données personnelles.</p>
 <p>La mise en place d'un lien vers le site eggleycompany.net est autorisée, sous réserve qu'il ne porte pas atteinte à l'image d'Eggley Company et que la page s'ouvre dans une fenêtre distincte, sans être intégrée dans un autre site.</p><h2 id="donnees">Données personnelles et cookies</h2>
 <p>Les modalités de traitement de vos données personnelles et l'utilisation des cookies sont détaillées dans notre <a href="/confidentialite">politique de confidentialité</a>.</p><h2 id="droit">Droit applicable</h2>
-<p>Les présentes mentions légales sont régies par le droit français. En cas de litige, et à défaut de résolution amiable, les tribunaux français seront seuls compétents.</p><h2 id="credits">Crédits</h2>
-<p>Photographies et visuels : Eggley Company. Polices de caractères : Playfair Display et Inter (SIL Open Font License). Icônes : Lucide (licence ISC).</p><p class="updated" style="margin-top:3rem">Dernière mise à jour : 8 octobre 2026.</p></div>
+<p>Les présentes mentions légales sont régies par le droit français. En cas de litige, et à défaut de résolution amiable, les tribunaux français seront seuls compétents.</p><h2 id="credits">Crédits</h2><p>Photographies : Aleksandar Popovski (cabosses de cacao), Ly Le Minh (cacaoyer), Tetiana Bykovets (fèves de cacao), Yasin Onus (café vert et torréfié), Emma Miller (noix de cajou), Bent Van Aeken (porte-conteneurs, vue aérienne), Venti Views (porte-conteneurs en mer), Bernd Dittrich (navire chargé de conteneurs), Jason Grant (papayes), Juno Jo (ananas), Carolin Thiergart (épices en sacs), Mohammad Mardani (épices au marché), iKshana Productions (curcuma), Guille B (cuivre), Morteza Mohammadi (acier), UZ Creative Services (entrepôt), Etty Fidele (fèves de cacao, Côte d'Ivoire), Jakub Kapusnak (grains de café), Pierre Bamin (riz) — via <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a>, licence Unsplash (usage commercial autorisé). Logos et documents : Eggley Company. Polices : Fraunces et Inter (SIL Open Font License). Icônes : Lucide (licence ISC). Fond de carte : Natural Earth (domaine public).</p><p class="updated" style="margin-top:3rem">Dernière mise à jour : 8 octobre 2026.</p></div>
   </div>
 </section>
 </main>
 <footer class="site-footer">
   <div class="container footer-top">
-    <div class="footer-brand">
-      <a class="brand" href="/" aria-label="Eggley Company — accueil"><img class="brand__mark" src="/assets/img/eggley-mark.png" alt="" width="134" height="175"><span class="brand__text"><span class="brand__name">Eggley Company</span><span class="brand__tag">Négoce · Import · Export</span></span></a>
-      <p>Entreprise française de négoce et de commerce international : matières premières, produits alimentaires naturels et bio, et métaux.</p>
+    <div>
+      <p class="footer-lead">Maison de négoce et de commerce international, <em>depuis 2018.</em></p>
+      <a class="btn btn--light" href="/contact">Demander une offre <svg class="icon icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
     </div>
     <div>
       <h2 class="footer-title">Navigation</h2>
@@ -117,6 +114,7 @@
       </ul>
     </div>
   </div>
+  <p class="footer-wordmark" aria-hidden="true">Eggley <em>Company</em></p>
   <div class="container footer-bottom">
     <p>© <span data-year>2026</span> Eggley Company Import Export — Bioperfect</p>
     <ul>

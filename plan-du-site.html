@@ -20,7 +20,7 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preload" href="/assets/fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/assets/css/tokens.css">
 <link rel="stylesheet" href="/assets/css/style.css">
@@ -39,13 +39,11 @@
   </div>
 </header>
 <main id="contenu" tabindex="-1">
-<section class="page-hero">
-  <div class="container">
+<section class="page-hero page-hero--plain">
+  <div class="container page-hero__inner">
     <nav class="breadcrumb" aria-label="Fil d'Ariane"><ol><li><a href="/">Accueil</a></li><li><span aria-current="page">Plan du site</span></li></ol></nav>
-    <div class="page-hero__grid">
-      <h1>Plan <em>du site.</em></h1>
-      <p>L'ensemble des pages et documents du site Eggley Company.</p>
-    </div>
+    <h1>Plan <em>du site.</em></h1>
+    <p>L'ensemble des pages et documents du site Eggley Company.</p>
   </div>
 </section>
 <section class="section section--flush-top">
@@ -80,9 +78,9 @@
 </main>
 <footer class="site-footer">
   <div class="container footer-top">
-    <div class="footer-brand">
-      <a class="brand" href="/" aria-label="Eggley Company — accueil"><img class="brand__mark" src="/assets/img/eggley-mark.png" alt="" width="134" height="175"><span class="brand__text"><span class="brand__name">Eggley Company</span><span class="brand__tag">Négoce · Import · Export</span></span></a>
-      <p>Entreprise française de négoce et de commerce international : matières premières, produits alimentaires naturels et bio, et métaux.</p>
+    <div>
+      <p class="footer-lead">Maison de négoce et de commerce international, <em>depuis 2018.</em></p>
+      <a class="btn btn--light" href="/contact">Demander une offre <svg class="icon icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
     </div>
     <div>
       <h2 class="footer-title">Navigation</h2>
@@ -113,6 +111,7 @@
       </ul>
     </div>
   </div>
+  <p class="footer-wordmark" aria-hidden="true">Eggley <em>Company</em></p>
   <div class="container footer-bottom">
     <p>© <span data-year>2026</span> Eggley Company Import Export — Bioperfect</p>
     <ul>

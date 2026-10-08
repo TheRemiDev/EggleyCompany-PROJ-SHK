@@ -10,7 +10,7 @@
   var toTop = document.querySelector(".to-top");
   function onScroll() {
     var y = window.scrollY || window.pageYOffset;
-    if (header) header.classList.toggle("is-scrolled", y > 8);
+    if (header) header.classList.toggle("is-scrolled", y > 24);
     if (toTop) toTop.classList.toggle("is-visible", y > 700);
   }
   window.addEventListener("scroll", onScroll, { passive: true });
@@ -33,6 +33,7 @@
       toggle.setAttribute("aria-expanded", String(open));
       toggle.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
       nav.classList.toggle("is-open", open);
+      if (header) header.classList.toggle("is-open", open);
       document.body.classList.toggle("nav-open", open);
     };
     toggle.addEventListener("click", function () {
@@ -135,6 +136,65 @@
     }, { rootMargin: "-45% 0px -50% 0px" });
     document.querySelectorAll(".chapter[id]").forEach(function (c) { co.observe(c); });
   }
+
+  /* Rail des gammes : boutons précédent / suivant + progression (défilement natif) */
+  document.querySelectorAll("[data-rail]").forEach(function (wrap) {
+    var rail = wrap.querySelector(".rail");
+    var prev = wrap.querySelector(".rail__btn--prev");
+    var next = wrap.querySelector(".rail__btn--next");
+    var bar = wrap.querySelector(".rail__progress span");
+    if (!rail) return;
+    var update = function () {
+      var max = rail.scrollWidth - rail.clientWidth;
+      var x = rail.scrollLeft;
+      if (prev) prev.disabled = x <= 2;
+      if (next) next.disabled = x >= max - 2;
+      if (bar) {
+        var visible = rail.clientWidth / rail.scrollWidth;
+        var progress = max > 0 ? x / max : 1;
+        bar.style.transform = "translateX(" + (progress * (1 - visible) * 100 / visible) + "%) scaleX(1)";
+        bar.style.width = (visible * 100) + "%";
+      }
+    };
+    var step = function (dir) {
+      var item = rail.querySelector("li");
+      var gap = parseFloat(getComputedStyle(rail).columnGap) || 0;
+      var w = item ? item.getBoundingClientRect().width + gap : rail.clientWidth * 0.8;
+      rail.scrollBy({ left: dir * w, behavior: reduceMotion ? "auto" : "smooth" });
+    };
+    if (prev) prev.addEventListener("click", function () { step(-1); });
+    if (next) next.addEventListener("click", function () { step(1); });
+    rail.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  });
+
+  /* Récit à image fixe : l'image suit le chapitre affiché */
+  var storyImgs = document.querySelectorAll(".story__visual img");
+  if (storyImgs.length && "IntersectionObserver" in window) {
+    var so = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var i = entry.target.getAttribute("data-step");
+        storyImgs.forEach(function (img) { img.classList.toggle("is-active", img.getAttribute("data-step") === i); });
+      });
+    }, { rootMargin: "-45% 0px -45% 0px" });
+    document.querySelectorAll(".story__step[data-step]").forEach(function (st) { so.observe(st); });
+  }
+
+  /* Carte : longueur réelle des tracés, puis animation à l'apparition */
+  document.querySelectorAll(".map").forEach(function (map) {
+    map.querySelectorAll(".map__route:not(.map__route--out)").forEach(function (path) {
+      try { path.style.setProperty("--len", Math.ceil(path.getTotalLength())); } catch (e) {}
+    });
+    if (!("IntersectionObserver" in window) || reduceMotion) { map.classList.add("is-visible"); return; }
+    var mo = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) { map.classList.add("is-visible"); mo.disconnect(); }
+      });
+    }, { threshold: 0.35 });
+    mo.observe(map);
+  });
 
   /* Contenus tiers (YouTube, Google Maps) chargés uniquement au clic */
   document.querySelectorAll("[data-embed]").forEach(function (btn) {

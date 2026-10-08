@@ -20,13 +20,14 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preload" href="/assets/fonts/playfair-display-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/fraunces-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" as="image" type="image/webp" imagesrcset="/assets/img/photos/mains-cacao-w-1000.webp 1000w, /assets/img/photos/mains-cacao-w-2000.webp 2000w" imagesizes="100vw">
 <link rel="stylesheet" href="/assets/css/tokens.css">
 <link rel="stylesheet" href="/assets/css/style.css">
 <script>document.documentElement.classList.add("js")</script>
 </head>
-<body>
+<body class="has-photo-hero">
 <a class="skip-link" href="#contenu">Aller au contenu</a>
 <header class="site-header">
   <div class="container site-header__inner">
@@ -40,13 +41,11 @@
 </header>
 <main id="contenu" tabindex="-1">
 <section class="page-hero">
-  <div class="container">
+  <div class="page-hero__media"><picture><source type="image/webp" srcset="/assets/img/photos/mains-cacao-w-1000.webp 1000w, /assets/img/photos/mains-cacao-w-2000.webp 2000w" sizes="100vw"><img src="/assets/img/photos/mains-cacao-w-1000.jpg" alt="Mains tenant des fèves de cacao en cours de séchage, Côte d'Ivoire" width="2000" height="1125" fetchpriority="high" decoding="async"></picture></div>
+  <div class="container page-hero__inner">
     <nav class="breadcrumb" aria-label="Fil d'Ariane"><ol><li><a href="/">Accueil</a></li><li><span aria-current="page">Bioperfect</span></li></ol></nav>
-    <div class="page-hero__grid">
-      <h1>Bioperfect, <em>au naturel.</em></h1>
-      <p>Négoce, import-export, transformation et distribution de produits alimentaires naturels et biologiques, importés principalement d'Afrique de l'Ouest.</p>
-    </div>
-    <div class="page-hero__band reveal-media"><picture><source type="image/webp" srcset="/assets/img/fruits-w-800.webp 800w, /assets/img/fruits-w.webp 1333w" sizes="100vw"><img src="/assets/img/fruits-w.jpg" srcset="/assets/img/fruits-w-800.jpg 800w, /assets/img/fruits-w.jpg 1333w" sizes="100vw" alt="Fruits tropicaux en cagettes" width="1333" height="750" fetchpriority="high"></picture></div>
+    <h1>Bioperfect, <em>au naturel.</em></h1>
+    <p>Négoce, import-export, transformation et distribution de produits alimentaires naturels et biologiques, importés principalement d'Afrique de l'Ouest.</p>
   </div>
 </section>
 <section class="section">
@@ -94,31 +93,31 @@
 </section>
 <section class="section on-dark">
   <div class="container">
-    <ul class="commitments" style="margin-top:0">
+    <ul class="commitments" style="margin-top:0;max-width:none">
       <li class="reveal"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 8.35V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V8.35A2 2 0 0 1 3.26 6.5l8-3.2a2 2 0 0 1 1.48 0l8 3.2A2 2 0 0 1 22 8.35Z"/><path d="M6 18h12"/><path d="M6 14h12"/><rect width="12" height="12" x="6" y="10"/></svg><strong>Infrastructures</strong><span>Un entrepôt à Saint-Ouen-l'Aumône (Val-d'Oise) pour le stockage et la préparation des commandes.</span></li>
       <li class="reveal" data-delay="1"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><strong>Ressources humaines</strong><span>Des collaborateurs aux quatre coins du monde, des coopératives et une main-d'œuvre locale rémunérée à la juste valeur.</span></li>
       <li class="reveal" data-delay="2"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg><strong>Presse</strong><span>Le lancement du rayon Afrique au E.Leclerc de Saint-Ouen-l'Aumône a fait l'objet d'articles de L'Économiste du Togo et d'AgroMedia.</span></li>
     </ul>
   </div>
 </section>
-<section class="cta on-dark">
-  <div class="container cta__inner">
-    <h2 class="reveal">Distribuer <em>les produits Bioperfect ?</em></h2>
-    <div class="cta__side reveal" data-delay="1">
-      <p>Grandes et moyennes surfaces, magasins spécialisés, restaurateurs : contactez-nous pour recevoir notre offre.</p>
-      <div class="cta__actions">
-        <a class="btn btn--light" href="/contact">Demander une offre <svg class="icon icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
-        <a class="btn btn--outline-light" href="/docs/Catalogue_EGGLEY_COMPANY.pdf" download><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg> Catalogue (PDF)</a>
-      </div>
+<section class="photo-band cta-band on-photo" aria-labelledby="cta-titre">
+  <div class="photo-band__media"><picture><source type="image/webp" srcset="/assets/img/photos/navire-sillage-w-1280.webp 1280w, /assets/img/photos/navire-sillage-w-2400.webp 2400w" sizes="100vw"><img src="/assets/img/photos/navire-sillage-w-1280.jpg" alt="" width="2400" height="1350" loading="lazy" decoding="async"></picture></div>
+  <div class="container photo-band__inner">
+    <p class="overline">Contact</p>
+    <h2 id="cta-titre" class="reveal">Distribuer <em>les produits Bioperfect ?</em></h2>
+    <p class="reveal" data-delay="1">Grandes et moyennes surfaces, magasins spécialisés, restaurateurs : contactez-nous pour recevoir notre offre.</p>
+    <div class="cta-band__actions reveal" data-delay="2">
+      <a class="btn btn--light" href="/contact">Demander une offre <svg class="icon icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+      <a class="btn btn--glass" href="/docs/Catalogue_EGGLEY_COMPANY.pdf" download><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg> Catalogue (PDF, 7 Mo)</a>
     </div>
   </div>
 </section>
 </main>
 <footer class="site-footer">
   <div class="container footer-top">
-    <div class="footer-brand">
-      <a class="brand" href="/" aria-label="Eggley Company — accueil"><img class="brand__mark" src="/assets/img/eggley-mark.png" alt="" width="134" height="175"><span class="brand__text"><span class="brand__name">Eggley Company</span><span class="brand__tag">Négoce · Import · Export</span></span></a>
-      <p>Entreprise française de négoce et de commerce international : matières premières, produits alimentaires naturels et bio, et métaux.</p>
+    <div>
+      <p class="footer-lead">Maison de négoce et de commerce international, <em>depuis 2018.</em></p>
+      <a class="btn btn--light" href="/contact">Demander une offre <svg class="icon icon--arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
     </div>
     <div>
       <h2 class="footer-title">Navigation</h2>
@@ -149,6 +148,7 @@
       </ul>
     </div>
   </div>
+  <p class="footer-wordmark" aria-hidden="true">Eggley <em>Company</em></p>
   <div class="container footer-bottom">
     <p>© <span data-year>2026</span> Eggley Company Import Export — Bioperfect</p>
     <ul>

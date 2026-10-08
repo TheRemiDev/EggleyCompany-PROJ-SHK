@@ -1,4 +1,4 @@
-# Charte de marque — Eggley Company v2.0
+# Charte de marque — Eggley Company v3.0
 
 > Dernière mise à jour : 8 octobre 2026
 > Statut : Validée pour le site v2
@@ -9,7 +9,7 @@
 |---------|-------|
 | Primary Color | #214285 |
 | Secondary Color | #79C481 |
-| Primary Font | Playfair Display (titres) / Inter (texte) |
+| Primary Font | Fraunces (titres) / Inter (texte) |
 | Voice | Expert, fiable, sobre, chaleureux |
 
 ---
@@ -68,7 +68,7 @@
 ### Font Stack
 
 ```css
---font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
+--font-heading: 'Fraunces', Georgia, 'Times New Roman', serif;
 --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
 ```
 
@@ -78,16 +78,16 @@ Polices auto-hébergées (woff2 variables) : aucune requête vers Google.
 
 | Element | Size (Desktop) | Size (Mobile) | Weight | Line Height |
 |---------|----------------|---------------|--------|-------------|
-| Display (hero) | 76px | 40px | 500 | 1.04 |
-| H1 | 60px | 36px | 500 | 1.08 |
-| H2 | 44px | 30px | 500 | 1.12 |
+| Display (hero) | 112px | 44px | 350 | 0.98 |
+| H1 | 80px | 40px | 350 | 1.02 |
+| H2 | 56px | 32px | 380 | 1.06 |
 | H3 | 22px | 20px | 600 (Inter) | 1.3 |
 | Overline | 12px | 12px | 600 (Inter, capitales, +0.16em) | 1.4 |
 | Body | 17px | 16px | 400 | 1.65 |
 | Body Large | 20px | 18px | 400 | 1.6 |
 | Small | 14px | 14px | 400 | 1.5 |
 
-Les titres en Playfair Display utilisent l'italique pour mettre un mot en valeur (« *avec exigence* »), jamais le gras.
+Les titres en Fraunces (taille optique automatique, axe opsz 9–144) utilisent l'italique pour mettre un mot en valeur (« *avec exigence* »), jamais le gras.
 
 ---
 
@@ -156,6 +156,7 @@ Espace minimal autour du monogramme = la moitié de sa hauteur. Sur fond sombre,
 ### Photography Style
 
 - **Sujets :** matières premières en gros plan (café, cacao, cajou), fruits tropicaux, logistique maritime
+- **Source :** photographies sous licence Unsplash (usage commercial libre) ; crédits listés dans les mentions légales
 - **Traitement :** couleurs naturelles chaudes ; sur fond sombre, voile Navy dégradé
 - **Composition :** cadrages serrés, matière qui remplit l'image
 
@@ -195,3 +196,4 @@ Angles quasi droits : registre éditorial et institutionnel, plus sobre que la v
 |---------|------|---------|
 | 1.0 | 2025 | Site v1 (Plus Jakarta Sans, bleu/vert) |
 | 2.0 | 2026-10-08 | Registre éditorial : Playfair Display + Inter, neutres chauds, accent Cacao Gold |
+| 3.0 | 2026-10-08 | Fraunces (taille optique), photographie plein cadre, carte des flux, en-tête sur image |
