@@ -2,21 +2,19 @@
 
 Site statique (HTML/CSS/JS, sans dépendance ni étape de build) d'Eggley Company Import Export / Bioperfect.
 
-## Pages
+## Structure
 
-| Fichier | Contenu |
+| Emplacement | Contenu |
 |---|---|
-| `index.html` | Accueil |
-| `apropos.html` | À propos — qui sommes-nous |
-| `services.html` | Offres et services (gammes de produits) |
-| `bioperfect.html` | Marque Bioperfect |
-| `contact.html` | Formulaire et coordonnées |
-| `merci.html` | Confirmation d'envoi du formulaire |
-| `mentions-legales.html` | Mentions légales et conditions d'utilisation |
-| `confidentialite.html` | Politique de confidentialité et cookies (RGPD) |
-| `plan-du-site.html`, `404.html` | Plan du site, page d'erreur |
+| `/` (racine) | **Site v2** — registre éditorial (Playfair Display + Inter, neutres chauds), servi sur `eggleycompany.net/` |
+| `v1/` | **Site v1** archivé, consultable sur `/v1/` (non indexé, `noindex` + `robots.txt`) |
+| `docs/` | Catalogue et dossier Bioperfect (PDF), partagés par les deux versions |
+| `assets/css/tokens.css` | Design tokens v2 (primitifs → sémantiques → composants), générés depuis `brand-kit/` |
+| `brand-kit/` | Charte de marque v2 (`docs/brand-guidelines.md`), tokens JSON, bannières LinkedIn et Open Graph — **ne pas mettre en ligne** |
 
-Les URL sont propres (sans `.html`) : `/apropos`, `/services`, `/contact`… Le `.htaccess` sert le bon fichier, redirige en 301 les anciennes adresses (`/apropos.html`, `/contact.php`, `/index.html`…), force HTTPS et le domaine sans `www`.
+Pages (v2 et v1) : accueil, `apropos`, `services`, `bioperfect`, `contact`, `merci`, `mentions-legales`, `confidentialite`, `plan-du-site`, `404`.
+
+Les URL sont propres (sans `.html`) : `/apropos`, `/services`, `/v1/contact`… Le `.htaccess` sert le bon fichier, redirige en 301 les anciennes adresses (`/apropos.html`, `/contact.php`, `/index.html`…), force HTTPS et le domaine sans `www` (uniquement sur `eggleycompany.net`).
 
 ## Déploiement sur Apache 2 (Debian / Ubuntu)
 
@@ -53,9 +51,13 @@ sudo certbot --apache -d eggleycompany.net -d www.eggleycompany.net --redirect
 
 # Mise en ligne / mise à jour des fichiers
 git clone -b claude/blissful-davinci-k26pwu https://github.com/theremidev/eggleycompany-proj-shk.git /tmp/eggley   # ou : git -C /tmp/eggley pull
-sudo rsync -a --delete --exclude='.git' --exclude='.claude' --exclude='.gitignore' --exclude='README.md' /tmp/eggley/ /var/www/eggleycompany.net/
+sudo rsync -a --delete --exclude='.git' --exclude='.claude' --exclude='.gitignore' --exclude='README.md' --exclude='brand-kit' /tmp/eggley/ /var/www/eggleycompany.net/
 sudo chown -R www-data:www-data /var/www/eggleycompany.net
 ```
+
+### Serveur de test (sans nom de domaine)
+
+Pour tester sur le site par défaut d'Apache (`/var/www/html`, accès par IP en http), le bloc `<Directory /var/www/html>` du fichier `000-default.conf` doit contenir `AllowOverride All`, et le module `rewrite` doit être activé. Le passage forcé en HTTPS ne s'applique qu'au domaine `eggleycompany.net`.
 
 ## Avant la mise en ligne
 
